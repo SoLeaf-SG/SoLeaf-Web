@@ -103,10 +103,8 @@ const founders: Founder[] = [
  *   { name: 'Alex Lim', role: 'Software Developer', focus: 'Builds the farm platform frontend.' },
  */
 const team: TeamMember[] = [
-  { name: 'Valene He', role: 'Chief Information Security Officer (CISO)' },
   { name: 'Chit Myat', role: 'Chief Business Officer (CBO)' },
-  { name: 'Nicole', role: 'Head of Product & Delivery' },
-  { name: 'Shermaine', role: 'Head of AI & Analytics' },
+  { name: 'Nicole', role: 'Chief Technology Officer (CTO)' },
 ];
 
 export const company = {

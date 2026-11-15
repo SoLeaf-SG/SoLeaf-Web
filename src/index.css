@@ -953,6 +953,26 @@ main:focus {
   text-transform: none;
 }
 
+@media (max-width: 480px) {
+  .product-intro__copy .eyebrow {
+    flex-wrap: nowrap;
+    gap: 6px;
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .product-intro__copy .eyebrow::before {
+    width: 12px;
+    flex-shrink: 0;
+  }
+
+  .product-intro__copy .eyebrow .status-badge {
+    padding-inline: 8px;
+    font-size: 0.68rem;
+  }
+}
+
 /* Inner pages: editorial header with an image panel */
 .hero--page,
 .hero--plain {
@@ -2446,6 +2466,32 @@ main:focus {
   box-shadow:
     0 0 0 2px var(--botanical),
     0 0 0 8px rgba(169, 196, 174, 0.35);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .timeline--company .timeline__item--current.is-visible .timeline__dot,
+  .timeline--development .timeline__item--current.is-in-view .timeline__dot {
+    animation: timeline-dot-pulse 1.5s ease-in-out 3;
+  }
+
+  .timeline--development .timeline__item--done.is-visible .timeline__dot,
+  .project-head.is-visible .status-badge--prototype::before {
+    animation: prototype-dot-blink 1.5s ease-in-out 3;
+  }
+}
+
+@keyframes prototype-dot-blink {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes timeline-dot-pulse {
+  50% {
+    box-shadow:
+      0 0 0 2px var(--botanical),
+      0 0 0 14px rgba(169, 196, 174, 0.12);
+  }
 }
 
 .timeline__item--next .timeline__dot {

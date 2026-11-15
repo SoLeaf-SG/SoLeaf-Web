@@ -52,13 +52,13 @@ export default function Platform() {
       <Section tone="ivory" id="development-status" labelledBy="status-title">
         <SectionHeading id="status-title" eyebrow="Development status" title="Where Evercrop stands." />
         <ol className="timeline timeline--development" role="list">
-          <li className="timeline__item">
+          <li className="timeline__item timeline__item--done reveal">
             <span className="timeline__dot" aria-hidden />
             <span className="timeline__label">Earlier prototype</span>
             <h3 className="timeline__title"><Link to="/projects#meod-farm">Farm sales exploration</Link></h3>
             <p className="timeline__text">Explored harvest pre-orders and farm-visit enquiries using demo data.</p>
           </li>
-          <li className="timeline__item timeline__item--current" aria-current="step">
+          <li className="timeline__item timeline__item--current reveal" aria-current="step" data-replay-animation>
             <span className="timeline__dot" aria-hidden />
             <span className="timeline__label">In development</span>
             <h3 className="timeline__title">Evercrop MVP</h3>

@@ -21,9 +21,11 @@ export function useReveal() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const replayAnimation = entry.target.hasAttribute('data-replay-animation');
+          if (replayAnimation) entry.target.classList.toggle('is-in-view', entry.isIntersecting);
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            if (!replayAnimation) observer.unobserve(entry.target);
           }
         });
       },

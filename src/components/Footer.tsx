@@ -83,11 +83,8 @@ export function Footer() {
 
         <div className="site-footer__legal-block">
           <p className="site-footer__entity">
-            <strong>{company.brandName}</strong>
-            <span>
-              Registered in {company.country} as a {company.entityType}.
-              {uen && <> UEN: {uen}</>}
-            </span>
+            <strong>{company.brandName}</strong> is registered in {company.country} as a {company.entityType.toLowerCase()}.
+            {uen && <> UEN: {uen}</>}
           </p>
         </div>
 

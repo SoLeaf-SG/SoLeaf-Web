@@ -3859,9 +3859,6 @@ main:focus {
 }
 
 .site-footer__entity {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
   margin: 0;
   font-size: 0.88rem;
 }

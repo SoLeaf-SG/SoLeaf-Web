@@ -5,8 +5,8 @@ import { company } from '../data/company';
 import { pages } from '../data/seo';
 import { usePageMeta } from '../hooks/usePageMeta';
 
-/** Update when either policy changes. */
-const LAST_UPDATED = '24 October 2026';
+const PRIVACY_UPDATED = '15 November 2026';
+const TERMS_UPDATED = '15 November 2026';
 
 function ContactLine() {
   return company.contact.email ? (
@@ -25,25 +25,22 @@ export function Privacy() {
       <Hero variant="plain" eyebrow="Legal" title="Privacy Policy" lead={`How ${company.legalName} handles personal data submitted through this website.`} />
       <section className="section section--white" aria-label="Privacy Policy">
         <div className="container legal">
-          <p className="legal__updated">Last updated: {LAST_UPDATED}</p>
+          <p className="legal__updated">Last updated: {PRIVACY_UPDATED}</p>
 
           <h2>1. Who we are</h2>
           <p>
             This website is operated by {company.legalName} (“{company.brandName}”, “we”, “us”), a limited liability
-            partnership registered in {company.country}. We aim to handle personal data in accordance with the Personal
-            Data Protection Act 2012 of Singapore (PDPA).
+            partnership registered in {company.country}. This policy covers enquiries and browsing on tyllage.com.
           </p>
 
           <h2>2. Information we collect</h2>
           <p>
-            We only collect personal data that you choose to give us — for example, when you email us or use the
-            enquiry form on our <Link to="/contact">Contact</Link> page. This may include your name, organisation,
-            email address, organisation type and the content of your message.
+            If you email us or use the enquiry form on our <Link to="/contact">Contact</Link> page, you may provide your name, organisation, organisation type, email address, subject and message.
           </p>
-          <p>
-            The enquiry form does not store your details on this website. It prepares an email in your own email
-            application, and your enquiry reaches us only if you choose to send that email.
-          </p>
+          <ul>
+            <li><strong>Email draft.</strong> When the form says “Open email draft”, it passes your enquiry to your email app. Tyllage receives it when you send the email. Your email provider may handle or save the draft.</li>
+            <li><strong>Direct submission.</strong> When an enquiry endpoint is configured, the form says “Send enquiry”. Your browser sends the form fields to that service along with your consent, the time you submitted and the page the enquiry came from.</li>
+          </ul>
           <p>
             This website does not use advertising or analytics cookies. Our hosting and content delivery providers may
             process standard technical information (such as IP address and browser type) in server logs for security and
@@ -61,15 +58,12 @@ export function Privacy() {
 
           <h2>4. Disclosure</h2>
           <p>
-            We may use trusted service providers (for example, cloud hosting or email providers) to process data on our
-            behalf. They may only use it to provide services to us. We may also disclose information where required by
-            law.
+            Email, hosting and enquiry service providers may process information when delivering those services. We may also disclose information where required by law.
           </p>
 
           <h2>5. Retention and security</h2>
           <p>
-            We keep personal data only as long as necessary for the purposes above or as required by law, and we take
-            reasonable security measures to protect it against unauthorised access, use or disclosure.
+            Enquiry information may be kept in email correspondence or in the systems that handle direct submissions. For questions about how your enquiry is stored, retained or protected, contact us through <ContactLine />.
           </p>
 
           <h2>6. Third-party websites</h2>
@@ -100,7 +94,7 @@ export function Terms() {
       <Hero variant="plain" eyebrow="Legal" title="Terms of Use" lead={`The terms that apply when you use the ${company.legalName} website.`} />
       <section className="section section--white" aria-label="Terms of Use">
         <div className="container legal">
-          <p className="legal__updated">Last updated: {LAST_UPDATED}</p>
+          <p className="legal__updated">Last updated: {TERMS_UPDATED}</p>
 
           <h2>1. About these terms</h2>
           <p>
@@ -110,9 +104,7 @@ export function Terms() {
 
           <h2>2. Information on this website</h2>
           <p>
-            Content on this website is provided for general information about {company.brandName} and our work. Products
-            and capabilities are described together with their stage of development; prototypes and future concepts are
-            not commercially available products. We may change, update or remove content at any time.
+            This website provides general information about {company.legalName}, Evercrop and earlier prototypes. Evercrop is in development and the descriptions of planned capabilities are for information only. We may change, update or remove content at any time.
           </p>
 
           <h2>3. Intellectual property</h2>

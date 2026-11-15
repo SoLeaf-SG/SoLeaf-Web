@@ -1,4 +1,4 @@
-import { ArrowUpRight, Building2, Cpu, GraduationCap, Handshake, Landmark, Mail, Sprout, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, Cpu, Handshake, Landmark, Mail, Sprout } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Section } from '../components/Section';
 import { ContactForm } from '../components/ContactForm';
@@ -9,12 +9,9 @@ import { pages } from '../data/seo';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const audiences = [
-  { icon: Sprout, title: 'Farm Owners', text: 'Explore how our tools could support your sales and day-to-day operations.' },
-  { icon: Building2, title: 'Agricultural Businesses', text: 'Talk to us about commercial and operational challenges.' },
-  { icon: Cpu, title: 'Technology Partners', text: 'Collaborate on integrations, data and innovation.' },
-  { icon: GraduationCap, title: 'Schools', text: 'Discuss learning journeys and education projects.' },
-  { icon: Handshake, title: 'Industry Collaborators', text: 'Work with us on initiatives across the agricultural sector.' },
-  { icon: TrendingUp, title: 'Mentors and Investors', text: 'Learn about our direction, progress and plans.' },
+  { icon: Sprout, title: 'Farms and agricultural businesses', text: 'Share how you handle customer enquiries, stock and orders.' },
+  { icon: Cpu, title: 'Technology collaborators', text: 'Get in touch about software, data and messaging integrations.' },
+  { icon: Handshake, title: 'Industry and venture enquiries', text: 'Start a conversation about the company and its development plans.' },
 ];
 
 export default function Contact() {
@@ -24,21 +21,10 @@ export default function Contact() {
   return (
     <>
       <Hero
-        eyebrow="Partner with us"
-        title={
-          <>
-            Let’s grow something <em className="serif-accent">together.</em>
-          </>
-        }
-        lead="Whether you grow, buy, build, teach, mentor or invest, we would like to hear from you."
+        eyebrow="Contact Tyllage"
+        title={<>Let’s grow something <em className="serif-accent">together.</em></>}
+        lead="Tell us how your farm handles enquiries and orders, ask about Evercrop, or start a conversation about collaborating."
         media={media.contact}
-        actions={
-          email ? (
-            <a className="btn btn--primary" href={`mailto:${email}`}>
-              <Mail size={18} aria-hidden /> Email {email}
-            </a>
-          ) : undefined
-        }
       />
 
       <Section tone="white" labelledBy="audiences-title" className="section--tight">
@@ -62,9 +48,9 @@ export default function Contact() {
         <div className="contact-layout">
           <div className="contact-layout__form reveal">
             <h2 id="enquiry-title" className="h3">
-              Partnership enquiry
+              Send an enquiry
             </h2>
-            <p className="muted">Tell us about your organisation and how you would like to collaborate.</p>
+            <p className="muted">Share a little about your organisation and what you’d like to discuss.</p>
             <ContactForm />
           </div>
 
@@ -74,11 +60,8 @@ export default function Contact() {
                 <span className="aside-card__icon">
                   <Mail size={22} aria-hidden />
                 </span>
-                <h3>Email us</h3>
-                <p>The quickest way to reach the Tyllage team.</p>
-                <a className="aside-card__email" href={`mailto:${email}`}>
-                  {email}
-                </a>
+                <h3>Email the Tyllage team</h3>
+                <p>Send us a note about Evercrop, your farm’s sales workflow, or working together.</p>
               </div>
             )}
 

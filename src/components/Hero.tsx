@@ -4,7 +4,7 @@ import type { SceneVariant } from './Scene';
 import { Media } from './Media';
 
 interface HeroProps {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: ReactNode;
   lead: ReactNode;
   actions?: ReactNode;
@@ -15,9 +15,10 @@ interface HeroProps {
   variant?: 'home' | 'page' | 'plain';
   media?: MediaSlot | SceneVariant;
   children?: ReactNode;
+  panel?: ReactNode;
 }
 
-export function Hero({ eyebrow, title, lead, actions, variant = 'page', media, children }: HeroProps) {
+export function Hero({ eyebrow, title, lead, actions, variant = 'page', media, children, panel }: HeroProps) {
   if (variant === 'home') {
     return (
       <section className="hero hero--home" aria-labelledby="page-title">
@@ -50,7 +51,7 @@ export function Hero({ eyebrow, title, lead, actions, variant = 'page', media, c
           {actions && <div className="hero__actions hero__fade hero__fade--4">{actions}</div>}
           {children}
         </div>
-        {variant === 'page' && media && <Media slot={media} className="hero__panel hero__fade hero__fade--3" priority />}
+        {variant === 'page' && (panel ?? (media && <Media slot={media} className="hero__panel hero__fade hero__fade--3" priority />))}
       </div>
     </section>
   );

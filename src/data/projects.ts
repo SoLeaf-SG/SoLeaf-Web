@@ -1,6 +1,6 @@
 import { MEOD_PROTOTYPE_URL } from './company';
 
-export type ProjectStatus = 'Prototype / Development' | 'Concept / Proposed Workstream';
+export type ProjectStatus = 'Earlier prototype' | 'Concept / Proposed Workstream';
 
 export interface Project {
   id: string;
@@ -23,12 +23,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'meod-farm',
-    name: 'Tyllage — MEOD Farm',
+    name: 'MEOD Farm exploration',
     shortName: 'MEOD Farm',
-    status: 'Prototype / Development',
+    status: 'Earlier prototype',
     public: true,
     summary:
-      'An evolving prototype exploring how AI-assisted tools could support a Singapore urban farm with customer engagement, harvest pre-orders, sales and marketing workflows, and learning-journey enquiries.',
+      'An earlier proof of concept explored customer engagement, harvest pre-orders and learning-journey enquiries in an urban farm context.',
     focusAreas: [
       'AI-assisted farm operations',
       'Customer engagement',
@@ -39,17 +39,17 @@ export const projects: Project[] = [
     ],
     link: MEOD_PROTOTYPE_URL,
     linkLabel: 'View the prototype',
-    note: 'An evolving prototype that uses demo data. It is not a completed commercial deployment, and it does not imply endorsement or verified results.',
+    note: 'The demo uses simulated data. The farm reference identifies the exploration context only and implies no commercial relationship or endorsement.',
   },
   {
     // Internal workstream — not shown on the public website for now.
     id: 'comcrop',
-    name: 'Tyllage — ComCrop',
+    name: 'ComCrop exploration',
     shortName: 'ComCrop',
     status: 'Concept / Proposed Workstream',
     public: false,
     summary:
-      'A proposed workstream investigating how farms and buyers could coordinate demand, allocate harvests and identify viable market routes and commercial opportunities.',
+      'An earlier concept exploring how farms and buyers could coordinate demand and allocate harvests.',
     focusAreas: [
       'Demand coordination',
       'Harvest allocation',

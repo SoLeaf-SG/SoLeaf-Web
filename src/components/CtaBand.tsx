@@ -5,6 +5,7 @@ import { company } from '../data/company';
 import { Media } from './Media';
 
 interface CtaBandProps {
+  eyebrow?: string;
   title?: ReactNode;
   text?: ReactNode;
   id?: string;
@@ -12,10 +13,11 @@ interface CtaBandProps {
 }
 
 export function CtaBand({
+  eyebrow = 'Partner with Tyllage',
   id = 'cta-title',
-  title = 'Let’s Grow Something Meaningful Together.',
-  text = 'We would like to hear from farm owners, agricultural businesses, technology partners, schools, industry collaborators, mentors and investors.',
-  buttonLabel = 'Partner With Tyllage',
+  title = 'Talk to Tyllage',
+  text = 'We welcome enquiries about Evercrop and farm sales workflows.',
+  buttonLabel = 'Contact Tyllage',
 }: CtaBandProps) {
   const { email } = company.contact;
   return (
@@ -24,7 +26,7 @@ export function CtaBand({
         <div className="cta-band__panel reveal">
           <Media slot="leaves" className="cta-band__bg" />
           <div className="cta-band__copy">
-            <p className="eyebrow eyebrow--light">Partner with Tyllage</p>
+            {eyebrow && <p className="eyebrow eyebrow--light">{eyebrow}</p>}
             <h2 id={id} className="cta-band__title">
               {title}
             </h2>

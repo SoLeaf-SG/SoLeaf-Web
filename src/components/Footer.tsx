@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import { company } from '../data/company';
-import { publicProjects } from '../data/projects';
 import { navItems } from '../data/navigation';
 import { ExternalLink } from './ExternalLink';
 import { Logo } from './Logo';
@@ -18,10 +17,8 @@ export function Footer() {
         <div className="site-footer__grid">
           <div className="site-footer__brand">
             <Logo />
-            <p className="site-footer__tagline">{company.tagline}</p>
             <p className="site-footer__about">
-              A Singapore-based, female-founded AgriTech software startup building practical AI for agricultural
-              businesses.
+              {company.description}
             </p>
             <SocialLinks tone="dark" include={['linkedin', 'instagram', 'github']} />
           </div>
@@ -30,7 +27,7 @@ export function Footer() {
             <h2 className="site-footer__heading">Company</h2>
             <ul role="list">
               {navItems
-                .filter((n) => n.to !== '/')
+                .filter((n) => n.to !== '/' && n.to !== '/platform')
                 .map((n) => (
                   <li key={n.to}>
                     <Link to={n.to}>{n.label}</Link>
@@ -39,27 +36,16 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav className="site-footer__col" aria-label="Platform and projects">
-            <h2 className="site-footer__heading">Platform</h2>
+          <nav className="site-footer__col" aria-label="Our product">
+            <h2 className="site-footer__heading">Our product</h2>
             <ul role="list">
               <li>
-                <Link to="/platform#core-capabilities">Development areas</Link>
+                <Link to="/platform">Evercrop</Link>
               </li>
               <li>
                 <Link to="/technology#responsible-ai">Responsible AI</Link>
               </li>
-              {publicProjects.map((p) => (
-                <li key={p.id}>
-                  <Link to={`/projects#${p.id}`}>{p.name}</Link>
-                </li>
-              ))}
-              {publicProjects
-                .filter((p) => p.link)
-                .map((p) => (
-                  <li key={`${p.id}-link`}>
-                    <ExternalLink href={p.link!}>{p.shortName} prototype</ExternalLink>
-                  </li>
-                ))}
+              <li><Link to="/projects#meod-farm">Prototype history</Link></li>
             </ul>
           </nav>
 

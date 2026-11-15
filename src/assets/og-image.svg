@@ -21,8 +21,8 @@
   </g>
   <!-- Ivory disc; the official logo is composited on top by scripts/generate-og-image.mjs -->
   <circle cx="141" cy="141" r="45" fill="#F7F8F3"/>
-  <text x="206" y="157" font-family="Manrope, Inter, Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" fill="#F7F8F3" letter-spacing="-1.5">Tyllage</text>
-  <text x="96" y="330" font-family="Manrope, Inter, Segoe UI, Arial, sans-serif" font-size="80" font-weight="800" fill="#F7F8F3" letter-spacing="-2.5">Growing Smarter.</text>
-  <text x="96" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-style="italic" fill="#A9C4AE" letter-spacing="-1.5">Selling Better.</text>
-  <text x="96" y="520" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="500" fill="#F7F8F3" fill-opacity="0.8">Practical AI for agricultural businesses · Singapore</text>
+  <text x="206" y="157" font-family="Manrope, Inter, Segoe UI, Arial, sans-serif" font-size="46" font-weight="800" fill="#F7F8F3" letter-spacing="-1.5">Tyllage LLP</text>
+  <text x="96" y="330" font-family="Manrope, Inter, Segoe UI, Arial, sans-serif" font-size="80" font-weight="800" fill="#F7F8F3" letter-spacing="-2.5">Software for the</text>
+  <text x="96" y="420" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-style="italic" fill="#A9C4AE" letter-spacing="-1.5">business of farming.</text>
+  <text x="96" y="520" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="500" fill="#F7F8F3" fill-opacity="0.8">Singapore AgriTech software company</text>
 </svg>

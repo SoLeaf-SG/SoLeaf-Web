@@ -31,7 +31,7 @@ export function Logo({ className, onClick }: { className?: string; onClick?: () 
             decoding="async"
           />
         </span>
-        <span className="logo__word">yllage</span>
+        <span className="logo__word" />
       </span>
     </Link>
   );

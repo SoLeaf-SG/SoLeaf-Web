@@ -24,6 +24,7 @@ The rest of this guide is for **Tyllage team members** only.
   public places (gists, forums, AI chat tools that keep your data) without approval.
 
 1. Branch from `main` and open a pull request; don't push directly to `main`.
-2. Run `npm run lint` and `npm run build` before pushing. CI runs the same checks.
+2. Run `npm run typecheck`, `npm run lint` and `npm run build` before pushing. The build in CI includes type checking.
 3. Never commit secrets, `.env` files, AWS credentials or customer data.
 4. Keep GitHub Actions pinned to full commit SHAs, as described in the README.
+5. Treat [tyllage.com](https://tyllage.com) as the corporate site of Tyllage LLP and describe Evercrop as its flagship product in development.

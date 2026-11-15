@@ -1,10 +1,9 @@
-import { ArrowUpRight, Compass, Eye, HeartHandshake, Lightbulb, Mail, ShieldCheck, Sprout, Target } from 'lucide-react';
+import { Compass, Eye, HeartHandshake, Lightbulb, ShieldCheck, Sprout, Target } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { Section, SectionHeading } from '../components/Section';
 import { CtaBand } from '../components/CtaBand';
 import { Media } from '../components/Media';
 import { TeamGallery, type Person } from '../components/TeamGallery';
-import { InstagramIcon, LinkedInIcon } from '../components/Icons';
 import { company } from '../data/company';
 import { media } from '../data/media';
 import { pages } from '../data/seo';
@@ -14,6 +13,11 @@ import { usePageMeta } from '../hooks/usePageMeta';
  * Founders' story — an editable draft supplied by the founders.
  * Keep it free of invented experiences, schools, awards or qualifications.
  */
+const aboutDescription = 'Tyllage is a Singapore-based, female-founded AgriTech software startup developing practical AI solutions for agricultural businesses.';
+const aboutFocus = 'Our initial focus is on farm operations and sales intelligence, rather than IoT, robotics or physical agricultural equipment.';
+const aboutMission = 'Empower farms with accessible technology that improves sales efficiency, strengthens market connections, and supports sustainable agricultural operations.';
+const aboutVision = 'Build a smarter and more commercially resilient agricultural ecosystem through intelligent, connected software.';
+
 const story = [
   'Our journey began with a shared interest in technology and the belief that meaningful innovation should solve real-world problems.',
   'Through our educational journeys from ITE to polytechnic, we developed our technical foundations, explored software development, and discovered opportunities to apply technology beyond the classroom.',
@@ -41,11 +45,11 @@ const approach = [
 
 /** Milestones in order — no dates are shown until they are confirmed. */
 const journeySteps = [
-  { label: 'Foundations', title: 'Learning to build', text: 'Our technical foundations took shape through our studies, from ITE to polytechnic.', state: 'done' },
-  { label: 'Founded', title: 'Tyllage LLP established', text: `Registered in ${company.country} as a limited liability partnership by two founding partners.`, state: 'done' },
-  { label: 'Prototyping', title: 'MEOD Farm prototype', text: 'Exploring AI-assisted farm sales and operations in a working prototype with demo data.', state: 'current' },
-  { label: 'Next', title: 'Validating with farms', text: 'Testing our assumptions with agricultural businesses and refining what we build.', state: 'next' },
-  { label: 'Ahead', title: 'First minimum viable product', text: 'Bringing the most useful capabilities together into an early product.', state: 'next' },
+  { label: 'Inspiration', title: 'Where it began', text: 'Our experience with SCCCI and Technopreneurship inspired us to explore turning technical ideas into real-world solutions.', state: 'done' },
+  { label: 'Established', title: 'Tyllage LLP registered', text: 'We established Tyllage in Singapore in October 2026 to develop our own technology-driven solutions.', state: 'done' },
+  { label: 'Exploration', title: 'Our first prototypes', text: 'We explored AI-assisted farm interactions through early proof-of-concept and prototype work.', state: 'done' },
+  { label: 'Current focus', title: 'Introducing Evercrop', text: 'Our flagship product aims to connect customer enquiries, stock availability and farm orders.', state: 'current' },
+  { label: 'Next', title: 'From MVP to farm pilots', text: 'Refine Evercrop, gather farm feedback and work towards a measurable pilot.', state: 'next' },
 ] as const;
 
 /** Founders first, then team members, in the order listed in company.ts. */
@@ -63,7 +67,6 @@ const people: Person[] = [
 
 export default function About() {
   usePageMeta(pages.about);
-  const { email } = company.contact;
 
   return (
     <>
@@ -74,14 +77,14 @@ export default function About() {
             From Classrooms to <em className="serif-accent">Cultivating Change.</em>
           </>
         }
-        lead={`${company.description} ${company.focus}`}
+        lead={`${aboutDescription} ${aboutFocus}`}
         media={media.aboutStory}
       />
 
       {/* Story */}
       <Section tone="white" labelledBy="story-title" className="story">
         <div className="story__grid">
-          <div className="story__aside reveal">
+          <div>
             <p className="eyebrow">Our story</p>
             <h2 id="story-title" className="h2">
               Founded by two female technology entrepreneurs.
@@ -90,7 +93,7 @@ export default function About() {
               {company.legalName} was founded by {company.founders.map((f) => f.name).join(' and ')}.
             </p>
           </div>
-          <div className="story__body reveal">
+          <div className="story__body">
             {story.map((p) => (
               <p key={p}>{p}</p>
             ))}
@@ -131,14 +134,14 @@ export default function About() {
               <Target size={22} aria-hidden />
             </span>
             <h3>Our mission</h3>
-            <p>{company.mission}</p>
+            <p>{aboutMission}</p>
           </div>
           <div className="mv-card reveal" style={{ ['--delay' as string]: '90ms' }}>
             <span className="mv-card__icon">
               <Compass size={22} aria-hidden />
             </span>
             <h3>Our vision</h3>
-            <p>{company.vision}</p>
+            <p>{aboutVision}</p>
           </div>
         </div>
       </Section>
@@ -220,16 +223,21 @@ export default function About() {
       </Section>
 
       {/* Our journey */}
-      <Section tone="white" labelledBy="journey-title">
+      <Section tone="white" labelledBy="journey-title" className="section--tight">
         <SectionHeading
           id="journey-title"
           eyebrow="Our journey"
-          title="Where we are, and where we are heading."
-          intro="We are an early-stage venture. This is the path so far, and the steps we are working towards."
+          title="From inspiration to innovation."
+          intro="What started with a passion for solving real-world problems is growing into a Singapore AgriTech venture building practical software for farms."
         />
-        <ol className="timeline" role="list">
+        <ol className="timeline timeline--company" role="list">
           {journeySteps.map((s, i) => (
-            <li key={s.title} className={`timeline__item timeline__item--${s.state} reveal`} style={{ ['--delay' as string]: `${i * 80}ms` }}>
+            <li
+              key={s.title}
+              className={`timeline__item timeline__item--${s.state} reveal`}
+              style={{ ['--delay' as string]: `${i * 80}ms` }}
+              aria-current={s.state === 'current' ? 'step' : undefined}
+            >
               <span className="timeline__dot" aria-hidden />
               <span className="timeline__label">
                 {s.label}
@@ -242,36 +250,13 @@ export default function About() {
         </ol>
       </Section>
 
-      {/* Social */}
-      <Section tone="beige" labelledBy="connect-title">
-        <div className="connect-panel reveal">
-          <div className="connect-panel__copy">
-            <h2 id="connect-title" className="h3">
-              Connect With Tyllage.
-            </h2>
-            <p>Follow our company updates and development journey, or get in touch directly.</p>
-          </div>
-          <div className="connect-panel__actions">
-            <a className="btn btn--primary" href={company.social.linkedin} target="_blank" rel="noopener noreferrer">
-              <LinkedInIcon size={18} /> LinkedIn <ArrowUpRight size={16} aria-hidden />
-              <span className="sr-only"> (opens in a new tab)</span>
-            </a>
-            {company.social.instagram && (
-              <a className="btn btn--outline" href={company.social.instagram} target="_blank" rel="noopener noreferrer">
-                <InstagramIcon size={18} /> Instagram <ArrowUpRight size={16} aria-hidden />
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            )}
-            {email && (
-              <a className="btn btn--outline" href={`mailto:${email}`}>
-                <Mail size={18} aria-hidden /> Email us
-              </a>
-            )}
-          </div>
-        </div>
-      </Section>
-
-      <CtaBand id="about-cta-title" />
+      <CtaBand
+        id="about-cta-title"
+        eyebrow="Partner with Tyllage"
+        title="Let’s Grow Something Meaningful Together."
+        text="We would like to hear from farm owners, agricultural businesses, technology partners, schools, industry collaborators, mentors and investors."
+        buttonLabel="Partner With Tyllage"
+      />
     </>
   );
 }

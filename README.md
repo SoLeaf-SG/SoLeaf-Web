@@ -1,22 +1,21 @@
 # Tyllage — Corporate Website
 
-The public corporate website for **Tyllage LLP** (UEN T26LL1129K), a Singapore-based, female-founded
-AgriTech software startup. *From Harvest to Demand.*
+The official corporate website of **Tyllage LLP** (UEN T26LL1129K) is [tyllage.com](https://tyllage.com).
+Tyllage LLP is a Singapore-registered AgriTech software company established in October 2026.
+Its mission is to make the commercial side of farming easier to manage with practical software.
 
 > **Proprietary software. © 2026 Tyllage LLP. All rights reserved.**
 > This repository is not open source. Being able to see it on GitHub does not give you permission to
 > copy, use, run, modify, deploy or redistribute any part of it, including its code, content, design
 > and brand assets. Outside contributions are not accepted. See [LICENSE](LICENSE).
 
-The site introduces the company, the farm sales and operations platform it is developing, its MEOD Farm
-prototype, and how to partner with Tyllage. It is **not** an online shop, and it is completely separate
-from the Tyllage farm application.
+The site introduces Tyllage LLP, its team, its technology approach and its flagship product,
+**Evercrop by Tyllage**. Evercrop’s product tagline is “Beyond the first harvest.”
 
-- **Stack:** React 18, TypeScript, Vite, React Router, Lucide React and plain CSS
-- **Rendering:** every page is prerendered to static HTML at build time, then hydrated in the browser
-- **Hosting:** designed for Amazon S3 + CloudFront (HTTPS, custom domain), deployed by GitHub Actions
-- **Backend:** none. The contact form prepares an email for the visitor to send, and can be connected
-  to an API later
+- **Stack:** React 18, TypeScript, Vite, React Router, Lucide React and custom CSS.
+- **Rendering:** Page HTML and metadata are prerendered at build time and hydrated in the browser.
+- **Hosting architecture:** Amazon S3 + CloudFront, with build and deployment through GitHub Actions.
+- **Enquiries:** Email drafts by default, with optional direct submissions to a separately configured API.
 
 ## Contents
 
@@ -37,14 +36,16 @@ from the Tyllage farm application.
 
 ## Project status
 
-| Area | Status |
-| --- | --- |
-| Website | Complete and building cleanly; lint and typecheck pass. |
-| Domain | `tyllage.org` is **planned**, not yet live. It is used only in metadata, never as a visible link. |
-| Hosting | AWS S3 + CloudFront is **not yet set up**. Until it is, CI builds the site and skips deployment. |
-| Contact form | Works as an email-draft flow. No backend yet. |
-| Photography | Illustrated scenes are used until approved photos are available. |
-| Founder photos and bios | Not yet added; cards show initials. |
+**Evercrop** is Tyllage LLP’s proprietary farm sales software in development. Its proposed MVP
+would receive WhatsApp enquiries through a planned WhatsApp Business API integration, use AI to
+interpret requests, verify stock and buyer-specific prices, capture structured orders and route
+exceptions to farm staff. A dashboard would surface orders for fulfilment. Customer records and
+repeat-buyer engagement are longer-term directions.
+
+An earlier proof of concept explored harvest pre-orders and learning-journey enquiries using demo
+data in the MEOD Farm context. ComCrop was an earlier exploratory concept. The full Evercrop MVP,
+the messaging integration and commercial deployments remain unconfirmed.
+
 
 ---
 
@@ -53,7 +54,7 @@ from the Tyllage farm application.
 Requires **Node.js 20 or newer** (CI uses Node 22).
 
 ```bash
-npm install
+npm ci
 npm run dev          # http://localhost:5173
 ```
 
@@ -76,12 +77,12 @@ and every push to `main`.
 
 | Route | Page |
 | --- | --- |
-| `/` | Home: hero, our purpose, what we do, how Tyllage works, meet Tyllage, featured workstream, follow our journey |
-| `/about` | Founders' story, team gallery, mission and vision, values, why agriculture, approach, responsible AI, our journey |
-| `/platform` | Core development areas with stage labels, AI that supports farm staff, future concepts |
-| `/projects` | Tyllage — MEOD Farm: problem, proposed solution, prototype capabilities and preview |
-| `/technology` | Six plain-language technology foundations and the preferred tech stack |
-| `/contact` | Partnership audiences, enquiry form, email, LinkedIn, Instagram and registered business details |
+| `/` | Corporate homepage, company mission and introduction to Evercrop |
+| `/about` | Company story, founders, leadership and mission |
+| `/platform` | Evercrop product page, proposed order workflow and development status |
+| `/projects` | Evercrop development and the earlier MEOD-context prototype |
+| `/technology` | Tyllage’s engineering and AI approach, illustrated through Evercrop’s proposed architecture |
+| `/contact` | Enquiries, email, social profiles and registered business details |
 | `/privacy`, `/terms` | Privacy Policy and Terms of Use |
 | Any other URL | 404 page (`noindex`) |
 
@@ -97,11 +98,11 @@ All company facts live in data files, so most updates don't need component chang
 
 | File | Contains |
 | --- | --- |
-| `src/data/company.ts` | Legal and brand name, UEN, email, **social links**, mission, vision, founders, team, production domain. |
-| `src/data/platform.ts` | Core and future capabilities, their **development stage**, and the homepage journey. |
-| `src/data/projects.ts` | Projects and whether each is `public`. Only MEOD Farm is currently public. |
+| `src/data/company.ts` | Company and product brand, UEN, contact details, mission, founders, team and production domain. |
+| `src/data/platform.ts` | Evercrop workflow and development-stage labels. |
+| `src/data/projects.ts` | Historical projects and whether each appears publicly. |
 | `src/data/media.ts` | Image slots: which illustrated scene or approved photo each section shows. |
-| `src/data/seo.ts` | Per-page titles and meta descriptions, plus the `Organization` JSON-LD. |
+| `src/data/seo.ts` | Page metadata and structured data linking Tyllage LLP to Evercrop. |
 | `src/data/navigation.ts` | Main navigation items. |
 
 ### Before publishing
@@ -109,12 +110,11 @@ All company facts live in data files, so most updates don't need component chang
 - **UEN:** `T26LL1129K` is shown in the footer, Contact page and structured data. Check it against the
   latest ACRA Business Profile before each publication. Invoices and official correspondence also need
   the LLP's legally required details; this website doesn't handle those.
-- **Capability stages:** `stage` in `src/data/platform.ts` is `prototype`, `mvp` (shown as "In
-  development") or `concept`. Confirm each one.
+- **Development stages:** Confirm scope and status before revising Evercrop or prototype claims.
 - **Founders' story:** the story on the About page is the founders' editable draft. Edit it in
   `src/pages/About.tsx`. Don't add personal details, schools or achievements that haven't been confirmed.
 - **Founder profiles:** each founder has `bio`, `linkedin` and `photo` fields in `company.ts`. Until a
-  photo is added, the card shows initials and "Photo to be added". Use real, approved photos only, never
+  photo is added, the card shows initials. Use real, approved photos only, never
   AI-generated or stock portraits.
 
 ### Team members
@@ -127,13 +127,6 @@ swipe or use the arrow keys.
 
 Each member needs a `name`. `role` (leave it out until confirmed), `focus` (one line on what they work
 on), `linkedin` and `photo` are optional:
-
-```ts
-const team: TeamMember[] = [
-  { name: 'Valene He', role: 'Chief Information Security Officer (CISO)' },
-  { name: 'Jamie Ong', role: 'Marketing', focus: 'Runs our social channels.', photo: '/images/team/jamie-ong.jpg' },
-];
-```
 
 Add people only with their agreement, using the name and role they want shown. Members without a photo
 show their initials. Put photos in `public/images/team/`; they are cropped to a square.
@@ -183,10 +176,11 @@ another real facility. Use MEOD photographs and branding only with permission.
 
 ## Domain
 
-The production domain is **https://tyllage.org** (planned). It is used only in metadata: canonical
-URLs, Open Graph tags, structured data, `robots.txt` and `sitemap.xml`. It is never shown to visitors
-as a link. To build for a different address (for example a temporary CloudFront domain), set
-`VITE_SITE_URL` at build time. In CI, add it as a repository variable.
+The official website and production canonical domain are **https://tyllage.com**. The build uses it
+for canonical URLs, Open Graph metadata, structured data, `robots.txt` and `sitemap.xml`.
+`VITE_SITE_URL` can override the URL for local or temporary builds. CI pins the official canonical
+domain. The CloudFront Function contains a redirect for the intended `www.tyllage.com` alias.
+Verify DNS, certificate coverage and the deployed redirect separately.
 
 ---
 
@@ -195,12 +189,15 @@ as a link. To build for a different address (for example a temporary CloudFront 
 `src/components/ContactForm.tsx` validates every field in the browser (required fields, email format,
 length limits, consent) and shows an accessible error summary.
 
-- **No endpoint configured (default):** the form works as an **email-draft flow**. It is labelled
+- **No valid endpoint configured (default):** the form works as an **email-draft flow**. It is labelled
   "This form prepares an email". A valid submission opens the visitor's email app with the enquiry
   pre-filled and addressed to tyllage.co@gmail.com, and the page says plainly that **nothing has been
   sent** until they press Send. It never shows a fake success message.
-- **Endpoint configured:** it `POST`s JSON to `VITE_CONTACT_ENDPOINT` and reports success only when the
-  server returns a 2xx response.
+- **Valid endpoint configured:** the form discloses direct submission and sends JSON to `VITE_CONTACT_ENDPOINT`.
+  The payload includes the enquiry, consent, timestamp and source page. The form reports success
+  on a 2xx response. A timeout or network error leaves the enquiry in the form for retry.
+
+`VITE_CONTACT_ENDPOINT` accepts a public HTTPS URL or a same-origin absolute path (such as `/api/enquiry`). Local loopback HTTP is accepted by the development server.
 
 To connect a backend (for example AWS API Gateway → Lambda → SES or DynamoDB):
 
@@ -213,6 +210,10 @@ To connect a backend (for example AWS API Gateway → Lambda → SES or DynamoDB
 
 > `VITE_` variables are embedded in the public JavaScript bundle. Use them only for public URLs.
 > Never put API keys, AWS credentials or other secrets in frontend environment variables.
+
+Before enabling direct submissions in production, founders should confirm the live submission mode,
+service providers, storage and retention, access practices, any cross-border handling, and the contact
+for privacy requests. Align the Privacy Policy with those decisions.
 
 ---
 
@@ -254,8 +255,7 @@ All custom CSS lives in `src/index.css`. No CSS framework is used.
   (`.serif-accent`).
 - **Class names** follow a block–element pattern, for example `.project-card__title`.
 - **Base resets** use `:where()`, so they carry no specificity and component classes always override them.
-- **Card grids** use CSS subgrid (Technology and Platform cards), so titles, descriptions and dividers
-  line up across each row. Browsers without subgrid fall back to a simple flex layout.
+- **Layout:** shared containers, section styles and grid layouts are defined in `src/index.css`.
 
 ---
 
@@ -264,7 +264,7 @@ All custom CSS lives in `src/index.css`. No CSS framework is used.
 - Each page has its own `<title>`, meta description, canonical URL, Open Graph and Twitter tags. These
   are **written into the static HTML** at build time, so crawlers and link previews see them without
   running JavaScript. `usePageMeta` keeps them in sync during client-side navigation.
-- An `Organization` JSON-LD block is included on every page. `sameAs` lists only the social profiles
+- An `Organization` JSON-LD block is included on every page and identifies Evercrop as a Tyllage LLP product. `sameAs` lists only the social profiles
   that are configured (LinkedIn and Instagram), and the UEN is included as an identifier.
 - `robots.txt` and `sitemap.xml` are generated at build time for the configured domain. The 404 page is
   marked `noindex`.
@@ -274,8 +274,7 @@ All custom CSS lives in `src/index.css`. No CSS framework is used.
 - `prefers-reduced-motion` disables scroll reveals, page transitions, hero motion and hover zoom, and
   makes the back-to-top button jump instead of scrolling smoothly. Content is fully visible without
   JavaScript.
-- Every page has been checked at 320, 375, 414, 768, 1024, 1280 and 1920 px wide, with no horizontal
-  scrolling or clipped text.
+- Check responsive layouts, keyboard navigation and the contact form in a local preview before publishing.
 
 ---
 
@@ -284,18 +283,20 @@ All custom CSS lives in `src/index.css`. No CSS framework is used.
 The build output in `dist/` is a set of static files:
 
 ```
-dist/index.html            → https://tyllage.org/
-dist/about/index.html      → https://tyllage.org/about
+dist/index.html            → https://tyllage.com/
+dist/about/index.html      → https://tyllage.com/about
 dist/404.html              → served for unknown URLs
 dist/assets/*              → fingerprinted JS/CSS (safe to cache for a year)
 dist/images/scenes/*.svg   → illustrated scenes
 ```
 
-### One-time AWS setup
+### AWS setup reference
+
+Verify the live distribution, certificate, DNS and alias before changing a deployment.
 
 1. **S3 bucket** (e.g. `tyllage-website`): Block Public Access **on**, static website hosting **off**.
    CloudFront reads from it privately.
-2. **ACM certificate** in **us-east-1** for `tyllage.org` and `www.tyllage.org` (DNS validation).
+2. **ACM certificate** in **us-east-1** for `tyllage.com` and `www.tyllage.com` (DNS validation).
 3. **CloudFront Function:** create one from `infra/cloudfront-url-rewrite.js` (runtime
    `cloudfront-js-2.0`) and publish it. It rewrites `/about` → `/about/index.html` and redirects
    `www` to the apex domain.
@@ -306,12 +307,12 @@ dist/images/scenes/*.svg   → illustrated scenes
    - Cache policy: *CachingOptimized*. Compression: on.
    - Function association: the function from step 3 on **Viewer request**.
    - Default root object: `index.html`.
-   - Alternate domain names: `tyllage.org`, `www.tyllage.org`, with the ACM certificate.
+   - Alternate domain names: `tyllage.com`, `www.tyllage.com`, with the ACM certificate.
    - Custom error responses: **403 → `/404.html` (response code 404)** and **404 → `/404.html`
      (response code 404)**. Without `s3:ListBucket`, S3 returns 403 for missing objects.
    - Recommended: attach the managed *SecurityHeadersPolicy* response headers policy (HSTS,
      `X-Content-Type-Options`, frame options, referrer policy).
-5. **DNS:** point `tyllage.org` and `www.tyllage.org` at the distribution (Route 53 alias A/AAAA
+5. **DNS:** point `tyllage.com` and `www.tyllage.com` at the distribution (Route 53 alias A/AAAA
    records, or CNAME/ALIAS at your DNS provider).
 
 ### GitHub Actions (OIDC, no stored AWS keys)
@@ -334,7 +335,7 @@ dist/images/scenes/*.svg   → illustrated scenes
 4. In the GitHub repository settings, add:
    - **Secret:** `AWS_DEPLOY_ROLE_ARN`
    - **Variables:** `AWS_REGION`, `S3_BUCKET`, `CLOUDFRONT_DISTRIBUTION_ID`, and optionally
-     `VITE_CONTACT_ENDPOINT` and `VITE_SITE_URL`
+     `VITE_CONTACT_ENDPOINT`
    - An environment called `production` (optionally with required reviewers).
 
 `.github/workflows/deploy.yml` then:
@@ -358,10 +359,9 @@ aws cloudfront create-invalidation --distribution-id <id> --paths "/*"
 
 ## Architecture note
 
-This corporate website and the Tyllage farm platform are deliberately separate. The website has no
-database, no server-side code and no access to farm platform data. The farm platform (preferred stack:
-React, TypeScript, Node.js, Express, PostgreSQL, AWS, OpenAI API and WhatsApp Business Platform) is
-built, deployed and secured independently.
+The corporate website ships as static files. Its optional enquiry API is hosted separately. Evercrop is a
+separate product under development. Its proposed stack includes React, TypeScript, Node.js/Express,
+PostgreSQL and AI APIs, with AWS under evaluation and WhatsApp Business API integration planned.
 
 ---
 

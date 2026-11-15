@@ -37,8 +37,8 @@ jobs:
         env:
           # Optional. Set as a repository variable once the enquiry API exists.
           VITE_CONTACT_ENDPOINT: ${{ vars.VITE_CONTACT_ENDPOINT }}
-          # Optional. Defaults to https://tyllage.org.
-          VITE_SITE_URL: ${{ vars.VITE_SITE_URL }}
+          # Keep the official canonical domain for all CI builds.
+          VITE_SITE_URL: https://tyllage.com
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

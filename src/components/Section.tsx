@@ -18,7 +18,7 @@ export function Section({ id, tone = 'ivory', className = '', children, labelled
 
 interface SectionHeadingProps {
   id: string;
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: ReactNode;
   intro?: ReactNode;
   align?: 'left' | 'center';

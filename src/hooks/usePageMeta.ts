@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { canonicalUrl, OG_IMAGE, type PageMeta } from '../data/seo';
+import { canonicalUrl, OG_IMAGE, OG_IMAGE_ALT, type PageMeta } from '../data/seo';
 import { company } from '../data/company';
 
 function setMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -39,6 +39,11 @@ export function usePageMeta(meta: PageMeta) {
     setMeta('property', 'og:image', `${company.siteUrl}${OG_IMAGE}`);
     setMeta('name', 'twitter:title', meta.title);
     setMeta('name', 'twitter:description', meta.description);
-    setCanonical(url);
+    setMeta('property', 'og:image:alt', OG_IMAGE_ALT);
+    if (meta.noindex) {
+      document.head.querySelector('link[rel="canonical"]')?.remove();
+    } else {
+      setCanonical(url);
+    }
   }, [meta]);
 }

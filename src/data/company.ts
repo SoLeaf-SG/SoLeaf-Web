@@ -63,7 +63,7 @@ export interface SocialProfiles {
  * to visitors as a link. Override at build time with VITE_SITE_URL (for
  * example while the site is hosted on a temporary address).
  */
-const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tyllage.org').trim().replace(/\/+$/, '');
+const siteUrl = (import.meta.env.VITE_SITE_URL?.trim() || 'https://tyllage.com').replace(/\/+$/, '');
 
 const social: SocialProfiles = {
   linkedin: 'https://www.linkedin.com/company/tyllage-llp',
@@ -110,27 +110,24 @@ const team: TeamMember[] = [
 export const company = {
   legalName: 'Tyllage LLP',
   brandName: 'Tyllage',
-  tagline: 'From Harvest to Demand.',
   industry: 'AgriTech / Artificial Intelligence / Software Development',
   country: 'Singapore',
   countryCode: 'SG',
   entityType: 'Limited Liability Partnership',
   siteUrl,
   logo: '/logo/2.png',
-  description:
-    'Tyllage is a Singapore-based, female-founded AgriTech software startup developing practical AI solutions for agricultural businesses.',
-  longDescription:
-    'We aim to improve how farms manage their sales, customer enquiries, upcoming harvests, marketing outreach and business operations — helping them make informed decisions, strengthen market connections, improve sales opportunities and reduce avoidable agricultural waste.',
-  focus:
-    'Our initial focus is on farm operations and sales intelligence, rather than IoT, robotics or physical agricultural equipment.',
-  mission:
-    'Empower farms with accessible technology that improves sales efficiency, strengthens market connections, and supports sustainable agricultural operations.',
-  vision:
-    'Build a smarter and more commercially resilient agricultural ecosystem through intelligent, connected software.',
+  description: 'Tyllage is a Singapore-registered AgriTech software company developing tools for agricultural businesses.',
   social,
   contact,
   founders,
   team,
+} as const;
+
+export const evercrop = {
+  name: 'Evercrop',
+  brandName: 'Evercrop by Tyllage',
+  tagline: 'Beyond the first harvest.',
+  description: 'AI-Powered Farm Sales Operations',
 } as const;
 
 /** All configured social profile URLs — used for `sameAs` structured data. */

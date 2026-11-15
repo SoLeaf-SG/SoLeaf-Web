@@ -3,7 +3,7 @@ import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import App from './App';
 import { sceneComponents } from './components/Scene';
-import { canonicalUrl, OG_IMAGE, organizationJsonLd, pages, type PageMeta } from './data/seo';
+import { canonicalUrl, OG_IMAGE, OG_IMAGE_ALT, organizationJsonLd, pages, type PageMeta } from './data/seo';
 import { company } from './data/company';
 
 /** Build-time renderer used by scripts/prerender.mjs. */
@@ -44,7 +44,7 @@ export function renderHead(meta: PageMeta): string {
     `<meta property="og:image" content="${image}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
-    `<meta property="og:image:alt" content="${company.brandName} — ${escapeAttr(company.tagline)}" />`,
+    `<meta property="og:image:alt" content="${escapeAttr(OG_IMAGE_ALT)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${description}" />`,

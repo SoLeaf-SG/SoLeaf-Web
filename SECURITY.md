@@ -33,7 +33,7 @@ disclose it publicly until Tyllage LLP has confirmed it is resolved.
 
 ## Scope
 
-In scope: the website served at Tyllage domains and the code in this repository.
+In scope: the corporate website served at [tyllage.com](https://tyllage.com) and the code in this repository.
 
 Out of scope: denial-of-service testing, social engineering, physical attacks, spam, and findings in
 third-party services that Tyllage does not control.

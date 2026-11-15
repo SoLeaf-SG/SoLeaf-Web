@@ -50,14 +50,34 @@ export type EnquiryResult =
   | { status: 'unavailable' }
   | { status: 'error'; message: string };
 
-const endpoint = (import.meta.env.VITE_CONTACT_ENDPOINT ?? '').trim();
+function getEnquiryEndpoint(value: string): string | null {
+  try {
+    if (value.startsWith('/')) {
+      const base = 'https://tyllage.com';
+      const relative = new URL(value, base);
+      return relative.origin === base && !relative.pathname.startsWith('//')
+        ? `${relative.pathname}${relative.search}`
+        : null;
+    }
 
-export const isEnquiryServiceConfigured = endpoint.length > 0;
+    const url = new URL(value);
+    const loopback = ['localhost', '127.0.0.1', '[::1]'].includes(url.hostname);
+    const supported = url.protocol === 'https:' ||
+      (import.meta.env.DEV && url.protocol === 'http:' && loopback);
+    return supported && !url.username && !url.password ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+const endpoint = getEnquiryEndpoint((import.meta.env.VITE_CONTACT_ENDPOINT ?? '').trim());
+
+export const isEnquiryServiceConfigured = endpoint !== null;
 
 const REQUEST_TIMEOUT_MS = 15000;
 
 export async function submitEnquiry(payload: EnquiryPayload): Promise<EnquiryResult> {
-  if (!isEnquiryServiceConfigured) {
+  if (!endpoint) {
     return { status: 'unavailable' };
   }
 

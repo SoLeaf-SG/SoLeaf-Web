@@ -10,7 +10,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
   const toggleRef = useRef<HTMLButtonElement>(null);
-  // Pages with a full-bleed photographic hero start with a transparent header.
   const overHero = pathname === '/' && !scrolled && !open;
 
   useEffect(() => {
@@ -66,7 +65,7 @@ export function Navbar() {
             </li>
             <li className="site-nav__mobile-only">
               <Link to="/contact" className="btn btn--primary btn--block">
-                Partner With Us <ArrowRight size={18} aria-hidden />
+                Contact Tyllage <ArrowRight size={18} aria-hidden />
               </Link>
             </li>
           </ul>
@@ -79,7 +78,7 @@ export function Navbar() {
             include={['linkedin', 'instagram']}
           />
           <Link to="/contact" className={`btn btn--sm site-header__cta ${overHero ? 'btn--sage' : 'btn--primary'}`}>
-            Partner With Us
+            Contact Tyllage
           </Link>
           <button
             ref={toggleRef}

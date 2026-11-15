@@ -1,4 +1,4 @@
-import { company, configuredSocialUrls } from './company';
+import { company, configuredSocialUrls, evercrop } from './company';
 
 export interface PageMeta {
   path: string;
@@ -8,44 +8,44 @@ export interface PageMeta {
   noindex?: boolean;
 }
 
-const suffix = ' | Tyllage';
+const suffix = ' | Tyllage LLP';
 
 export const pages = {
   home: {
     path: '/',
-    title: 'Tyllage — Growing Smarter. Selling Better. | Singapore AgriTech',
+    title: 'Tyllage LLP | Singapore AgriTech Software Company',
     description:
-      'Tyllage is a Singapore-based, female-founded AgriTech startup developing practical AI that helps farms manage sales, enquiries, upcoming harvests and marketing outreach.',
+      'Tyllage LLP is a Singapore-registered AgriTech software company developing tools for agricultural businesses, including its flagship farm sales product Evercrop.',
   },
   about: {
     path: '/about',
-    title: 'About Us' + suffix,
+    title: 'Company & Team' + suffix,
     description:
-      'From classrooms to cultivating change: the story of Tyllage LLP, a Singapore AgriTech startup founded by Felicia Tan and Shernell Ho. Our mission, vision and values.',
+      'Meet the team behind Tyllage LLP, a Singapore AgriTech startup founded by Felicia Tan and Shernell Ho. Explore our story, mission, vision and values.',
   },
   platform: {
     path: '/platform',
-    title: 'Our Platform' + suffix,
+    title: 'Evercrop by Tyllage | AI-Powered Farm Sales Operations',
     description:
-      'The practical tools Tyllage is developing for farm businesses: Demand Radar, Harvest Batch Management, AI Campaign Advisor, Harvest Pre-Orders and more — with farm staff always in control.',
+      'Explore the proposed Evercrop workflow for WhatsApp enquiries, stock and price checks, structured orders, staff escalation and fulfilment.',
   },
   projects: {
     path: '/projects',
-    title: 'Projects & Pilots' + suffix,
+    title: 'Product Development & Prototypes' + suffix,
     description:
-      'Tyllage — MEOD Farm: an evolving prototype exploring AI-assisted farm operations, customer engagement, harvest pre-orders and learning-journey support.',
+      'Follow Evercrop development and explore the earlier proof of concept for harvest pre-orders and learning-journey enquiries.',
   },
   technology: {
     path: '/technology',
-    title: 'Technology & Innovation' + suffix,
+    title: 'Software Engineering & AI' + suffix,
     description:
-      'How Tyllage uses practical AI, cloud software and workflow automation to help farms — explained in plain language, with responsible AI and privacy at the core.',
+      'Explore Tyllage’s approach to software engineering and AI integration through Evercrop’s proposed architecture.',
   },
   contact: {
     path: '/contact',
-    title: 'Partner With Us' + suffix,
+    title: 'Contact' + suffix,
     description:
-      'Partner with Tyllage. Contact us at tyllage.co@gmail.com — we welcome farm owners, agricultural businesses, technology partners, schools, industry collaborators, mentors and investors.',
+      'Contact Tyllage LLP to discuss farm sales workflows, Evercrop development or potential collaboration.',
   },
   privacy: {
     path: '/privacy',
@@ -66,6 +66,7 @@ export const pages = {
 } satisfies Record<string, PageMeta>;
 
 export const OG_IMAGE = '/images/og-image.png';
+export const OG_IMAGE_ALT = 'Tyllage LLP — Singapore AgriTech software company';
 
 export function canonicalUrl(path: string): string {
   return path === '/' ? `${company.siteUrl}/` : `${company.siteUrl}${path}`;
@@ -79,8 +80,14 @@ export function organizationJsonLd() {
     legalName: company.legalName,
     url: `${company.siteUrl}/`,
     logo: `${company.siteUrl}/logo/tyllage-logo-512.png`,
-    description: `${company.description} ${company.longDescription}`,
-    slogan: company.tagline,
+    description: company.description,
+    owns: {
+      '@type': 'Product',
+      name: evercrop.name,
+      description: evercrop.description,
+      slogan: evercrop.tagline,
+      url: canonicalUrl(pages.platform.path),
+    },
     address: {
       '@type': 'PostalAddress',
       addressCountry: company.countryCode,

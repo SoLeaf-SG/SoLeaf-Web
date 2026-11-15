@@ -193,7 +193,7 @@ export function ContactForm() {
       message: values.message.trim(),
       consent: true,
       consentedAt: new Date().toISOString(),
-      source: window.location.href,
+      source: `${window.location.origin}${window.location.pathname}`,
       website: values.website,
     });
 
@@ -237,10 +237,16 @@ export function ContactForm() {
     ) : null;
 
   return (
-    <form className="contact-form" noValidate onSubmit={handleSubmit}
-      aria-describedby={isEnquiryServiceConfigured ? undefined : id('form-note')}
-      aria-label={draftMode ? 'Partnership enquiry (prepares an email)' : 'Partnership enquiry'}
+    <form className="contact-form" method="post" noValidate onSubmit={handleSubmit}
+      aria-describedby={id('form-note')}
+      aria-label={draftMode ? 'Tyllage enquiry (prepares an email)' : 'Tyllage enquiry'}
     >
+      {isEnquiryServiceConfigured && (
+        <p className="form-notice" id={id('form-note')}>
+          <Info size={18} aria-hidden />
+          Send enquiry submits your details directly to our enquiry service.
+        </p>
+      )}
       {draftMode && (
         <div className="form-notice" id={id('form-note')}>
           <Mail size={18} aria-hidden />
@@ -503,7 +509,7 @@ export function ContactForm() {
           <div className="form-status form-status--error" role="alert">
             <AlertCircle size={22} aria-hidden />
             <div>
-              <h3>Your enquiry has not been sent.</h3>
+              <h3>We couldn’t confirm submission.</h3>
               <p>{state.message} Your message is still in the form above.</p>
             </div>
           </div>

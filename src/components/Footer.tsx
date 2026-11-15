@@ -83,7 +83,7 @@ export function Footer() {
 
         <div className="site-footer__legal-block">
           <p className="site-footer__entity">
-            <strong>{company.legalName}</strong>
+            <strong>{company.brandName}</strong>
             <span>
               Registered in {company.country} as a {company.entityType}.
               {uen && <> UEN: {uen}</>}
@@ -93,7 +93,7 @@ export function Footer() {
 
         <div className="site-footer__bottom">
           <p>
-            © {year} {company.legalName}. All rights reserved.
+            © {year} {company.brandName}. All rights reserved.
           </p>
           <ul role="list" className="site-footer__legal">
             <li>

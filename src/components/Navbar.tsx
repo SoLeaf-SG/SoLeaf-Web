@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ArrowRight, Menu, X } from 'lucide-react';
-import { company } from '../data/company';
 import { navItems } from '../data/navigation';
 import { Logo } from './Logo';
 import { SocialLinks } from './SocialLinks';
@@ -51,9 +50,7 @@ export function Navbar() {
       className={`site-header${scrolled ? ' is-scrolled' : ''}${open ? ' is-open' : ''}${overHero ? ' is-over-hero' : ''}`}
     >
       <div className="container site-header__inner">
-        <Link to="/" className="site-header__brand" aria-label={`${company.brandName} — home`}>
-          <Logo tone={overHero ? 'light' : 'dark'} />
-        </Link>
+        <Logo className="site-header__brand" onClick={() => setOpen(false)} />
 
         <nav className="site-nav" aria-label="Primary">
           <ul id="primary-menu" className="site-nav__list" role="list">

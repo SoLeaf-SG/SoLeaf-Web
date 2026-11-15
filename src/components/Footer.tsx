@@ -17,9 +17,7 @@ export function Footer() {
       <div className="container">
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            <Link to="/" aria-label={`${company.brandName} — home`}>
-              <Logo tone="light" />
-            </Link>
+            <Logo />
             <p className="site-footer__tagline">{company.tagline}</p>
             <p className="site-footer__about">
               A Singapore-based, female-founded AgriTech software startup building practical AI for agricultural

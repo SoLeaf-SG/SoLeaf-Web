@@ -13,15 +13,15 @@ const suffix = ' | Tyllage LLP';
 export const pages = {
   home: {
     path: '/',
-    title: 'Tyllage LLP | Singapore AgriTech Software Company',
+    title: 'Tyllage | Singapore AgriTech Software Company',
     description:
-      'Tyllage LLP is a Singapore-registered AgriTech software company developing tools for agricultural businesses, including its flagship farm sales product Evercrop.',
+      'Tyllage is a Singapore-registered AgriTech software company developing tools for agricultural businesses, including its flagship farm sales product Evercrop.',
   },
   about: {
     path: '/about',
     title: 'Company & Team' + suffix,
     description:
-      'Meet the team behind Tyllage LLP, a Singapore AgriTech startup founded by Felicia Tan and Shernell Ho. Explore our story, mission, vision and values.',
+      'Meet the team behind Tyllage, a Singapore AgriTech startup founded by Felicia Tan and Shernell Ho. Explore our story, mission, vision and values.',
   },
   platform: {
     path: '/platform',

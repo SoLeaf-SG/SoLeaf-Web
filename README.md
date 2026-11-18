@@ -1,7 +1,7 @@
 # Tyllage — Corporate Website
 
 The official corporate website of **Tyllage LLP** (UEN T26LL1129K) is [tyllage.com](https://tyllage.com).
-Tyllage LLP is a Singapore-registered AgriTech software company established in October 2026.
+Tyllage is a Singapore-registered AgriTech software company established in October 2026.
 Its mission is to make the commercial side of farming easier to manage with practical software.
 
 > **Proprietary software. © 2026 Tyllage LLP. All rights reserved.**
@@ -9,7 +9,7 @@ Its mission is to make the commercial side of farming easier to manage with prac
 > copy, use, run, modify, deploy or redistribute any part of it, including its code, content, design
 > and brand assets. Outside contributions are not accepted. See [LICENSE](LICENSE).
 
-The site introduces Tyllage LLP, its team, its technology approach and its flagship product,
+The site introduces Tyllage, its team, its technology approach and its flagship product,
 **Evercrop by Tyllage**. Evercrop’s product tagline is “Beyond the first harvest.”
 
 - **Stack:** React 18, TypeScript, Vite, React Router, Lucide React and custom CSS.
@@ -36,7 +36,7 @@ The site introduces Tyllage LLP, its team, its technology approach and its flags
 
 ## Project status
 
-**Evercrop** is Tyllage LLP’s proprietary farm sales software in development. Its proposed MVP
+**Evercrop** is Tyllage's proprietary farm sales software in development. Its proposed MVP
 would receive WhatsApp enquiries through a planned WhatsApp Business API integration, use AI to
 interpret requests, verify stock and buyer-specific prices, capture structured orders and route
 exceptions to farm staff. A dashboard would surface orders for fulfilment. Customer records and

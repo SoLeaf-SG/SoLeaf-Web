@@ -386,4 +386,5 @@ Third-party open-source packages and web fonts used by the site remain under the
 
 For licensing, partnership or permission enquiries, email
 [soleaf.co@gmail.com](mailto:soleaf.co@gmail.com) or contact the team through the
-[GitHub organisation hosting this repository](https://github.com/Tyllage).
+[GitHub organisation hosting this repository](https://github.com/Tyllage), or connect with
+[SoLeaf on LinkedIn](https://www.linkedin.com/company/soleaf).

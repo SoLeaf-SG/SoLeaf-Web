@@ -18,7 +18,7 @@ If you believe you have found a security vulnerability in the SoLeaf website or 
 please report it **privately**:
 
 - **Email:** [soleaf.co@gmail.com](mailto:soleaf.co@gmail.com) with the subject line
-  `Security report: Tyllage-Web`
+  `Security report: SoLeaf website`
 - Include a description of the issue, the affected URL or file, steps to reproduce, and its likely
   impact.
 

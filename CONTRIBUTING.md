@@ -1,6 +1,6 @@
-# Contributing to Tyllage-Web
+# Contributing to SoLeaf
 
-> **Tyllage-Web does not accept outside contributions.**
+> **SoLeaf does not accept outside contributions.**
 > This repository is proprietary and is maintained only by the SoLeaf team. Pull requests, patches,
 > issues and feature work from anyone outside the team will be closed without review. Forking or
 > copying this repository does not give you any right to use, run, modify, deploy or redistribute its
@@ -12,7 +12,8 @@ If you are not a member of the SoLeaf team:
   open a public issue.
 - **Interested in licensing, a partnership or permission to use SoLeaf material?** Email
   [soleaf.co@gmail.com](mailto:soleaf.co@gmail.com) or contact the team through the
-  [GitHub organisation hosting this repository](https://github.com/Tyllage).
+  [GitHub organisation hosting this repository](https://github.com/Tyllage), or connect with
+  [SoLeaf on LinkedIn](https://www.linkedin.com/company/soleaf).
 
 The rest of this guide is for **SoLeaf team members** only.
 

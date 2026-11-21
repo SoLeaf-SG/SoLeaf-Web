@@ -146,7 +146,7 @@ credibility with farms, partners and innovation audiences depends on it.
 ### Logo
 
 The current logo asset is `public/logo/2.png` and still carries the previous wordmark. The site uses
-small derivatives for speed (`tyllage-logo-96.webp`, favicons, `apple-touch-icon.png`)
+small derivatives for speed (`soleaf-logo-96.webp`, favicons, `apple-touch-icon.png`)
 and keeps `/logo/2.png` as the fallback. It is shown at 44 px directly on the background, on light and
 dark sections alike. After replacing the logo, run `npm run brand-assets` and `npm run og-image`.
 

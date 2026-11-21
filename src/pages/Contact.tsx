@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <>
       <Hero
-        eyebrow="Contact Tyllage"
+        eyebrow="Contact SoLeaf"
         title={<>Let’s grow something <em className="serif-accent">together.</em></>}
         lead="Tell us how your farm handles enquiries and orders, ask about Evercrop, or start a conversation about collaborating."
         media={media.contact}
@@ -60,13 +60,13 @@ export default function Contact() {
                 <span className="aside-card__icon">
                   <Mail size={22} aria-hidden />
                 </span>
-                <h3>Email the Tyllage team</h3>
+                <h3>Email the SoLeaf team</h3>
                 <p>Send us a note about Evercrop, your farm’s sales workflow, or working together.</p>
               </div>
             )}
 
             <div className="aside-card">
-              <h3>Follow Tyllage</h3>
+              <h3>Follow SoLeaf</h3>
               <ul className="aside-links" role="list">
                 <li>
                   <a href={company.social.linkedin} target="_blank" rel="noopener noreferrer">
@@ -104,7 +104,7 @@ export default function Contact() {
               <div>
                 <h3>Registered business</h3>
                 <p>
-                  <strong>{company.legalName}</strong>
+                  <strong>SoLeaf LLP</strong>
                   <br />
                   {company.entityType}, registered in {company.country}
                   {uen && (

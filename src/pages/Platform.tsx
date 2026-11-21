@@ -21,7 +21,7 @@ export default function Platform() {
         title={<>AI-powered sales <em className="serif-accent">for farms.</em></>}
         lead="Evercrop is designed to turn customer conversations into validated orders using the farm’s own stock records, pricing and approval rules."
         media={media.founders}
-        actions={<Link to="/contact" className="btn btn--primary">Talk to Tyllage <ArrowRight size={18} aria-hidden /></Link>}
+        actions={<Link to="/contact" className="btn btn--primary">Talk to SoLeaf <ArrowRight size={18} aria-hidden /></Link>}
       />
 
       <Section tone="white" id="core-capabilities" labelledBy="workflow-title">

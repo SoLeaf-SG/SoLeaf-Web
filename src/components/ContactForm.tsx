@@ -239,7 +239,7 @@ export function ContactForm() {
   return (
     <form className="contact-form" method="post" noValidate onSubmit={handleSubmit}
       aria-describedby={id('form-note')}
-      aria-label={draftMode ? 'Tyllage enquiry (prepares an email)' : 'Tyllage enquiry'}
+      aria-label={draftMode ? 'SoLeaf enquiry (prepares an email)' : 'SoLeaf enquiry'}
     >
       {isEnquiryServiceConfigured && (
         <p className="form-notice" id={id('form-note')}>
@@ -445,7 +445,7 @@ export function ContactForm() {
             aria-describedby={describedBy('consent')}
           />
           <label htmlFor={id('consent')}>
-            I agree that {company.legalName} may use the information I provide to respond to this enquiry, as
+            I agree that SoLeaf LLP may use the information I provide to respond to this enquiry, as
             described in the <Link to="/privacy">Privacy Policy</Link>. <span aria-hidden="true">*</span>
           </label>
           <FieldError name="consent" />
@@ -499,7 +499,7 @@ export function ContactForm() {
                 above. Please contact us through our LinkedIn company page instead.
               </p>
               <a className="btn btn--outline btn--sm" href={company.social.linkedin} target="_blank" rel="noopener noreferrer">
-                Message Tyllage on LinkedIn <ArrowUpRight size={16} aria-hidden />
+                Message SoLeaf on LinkedIn <ArrowUpRight size={16} aria-hidden />
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>

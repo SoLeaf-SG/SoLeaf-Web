@@ -9,7 +9,7 @@ export function FollowJourney({ tone = 'white' }: { tone?: 'white' | 'ivory' | '
           id="follow-title"
           eyebrow="Company updates"
           title="Follow Our Journey"
-          intro="We share our progress as Tyllage grows. Follow along on our official channels."
+          intro="We share our progress as SoLeaf grows. Follow along on our official channels."
         />
         <SocialLinks variant="cards" include={['linkedin', 'instagram']} className="reveal" />
       </div>

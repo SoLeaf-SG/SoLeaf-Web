@@ -39,7 +39,7 @@ export default function Technology() {
       />
 
       <Section tone="white" labelledBy="architecture-title">
-        <SectionHeading id="architecture-title" eyebrow="Software engineering at Tyllage" title="Evercrop’s proposed architecture" />
+        <SectionHeading id="architecture-title" eyebrow="Software engineering at SoLeaf" title="Evercrop's proposed architecture" />
         <ul className="pillars" role="list">
           {layers.map(({ id, icon: Icon, title, text }) => (
             <li key={id} id={id} className="pillar">

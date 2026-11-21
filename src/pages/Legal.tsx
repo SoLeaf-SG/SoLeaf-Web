@@ -5,8 +5,10 @@ import { company } from '../data/company';
 import { pages } from '../data/seo';
 import { usePageMeta } from '../hooks/usePageMeta';
 
-const PRIVACY_UPDATED = '15 November 2026';
-const TERMS_UPDATED = '15 November 2026';
+const PRIVACY_UPDATED = '21 November 2026';
+const TERMS_UPDATED = '21 November 2026';
+const legalName = 'SoLeaf LLP';
+const brandName = 'SoLeaf';
 
 function ContactLine() {
   return company.contact.email ? (
@@ -22,14 +24,14 @@ export function Privacy() {
   usePageMeta(pages.privacy);
   return (
     <>
-      <Hero variant="plain" eyebrow="Legal" title="Privacy Policy" lead={`How ${company.legalName} handles personal data submitted through this website.`} />
+      <Hero variant="plain" eyebrow="Legal" title="Privacy Policy" lead={`How ${legalName} handles personal data submitted through this website.`} />
       <section className="section section--white" aria-label="Privacy Policy">
         <div className="container legal">
           <p className="legal__updated">Last updated: {PRIVACY_UPDATED}</p>
 
           <h2>1. Who we are</h2>
           <p>
-            This website is operated by {company.legalName} (“{company.brandName}”, “we”, “us”), a limited liability
+            This website is operated by {legalName} ("{brandName}", "we", "us"), a limited liability
             partnership registered in {company.country}. This policy covers enquiries and browsing on tyllage.com.
           </p>
 
@@ -38,7 +40,7 @@ export function Privacy() {
             If you email us or use the enquiry form on our <Link to="/contact">Contact</Link> page, you may provide your name, organisation, organisation type, email address, subject and message.
           </p>
           <ul>
-            <li><strong>Email draft.</strong> When the form says “Open email draft”, it passes your enquiry to your email app. Tyllage receives it when you send the email. Your email provider may handle or save the draft.</li>
+            <li><strong>Email draft.</strong> When the form says "Open email draft", it passes your enquiry to your email app. SoLeaf receives it when you send the email. Your email provider may handle or save the draft.</li>
             <li><strong>Direct submission.</strong> When an enquiry endpoint is configured, the form says “Send enquiry”. Your browser sends the form fields to that service along with your consent, the time you submitted and the page the enquiry came from.</li>
           </ul>
           <p>
@@ -91,25 +93,25 @@ export function Terms() {
   usePageMeta(pages.terms);
   return (
     <>
-      <Hero variant="plain" eyebrow="Legal" title="Terms of Use" lead={`The terms that apply when you use the ${company.legalName} website.`} />
+      <Hero variant="plain" eyebrow="Legal" title="Terms of Use" lead={`The terms that apply when you use the ${legalName} website.`} />
       <section className="section section--white" aria-label="Terms of Use">
         <div className="container legal">
           <p className="legal__updated">Last updated: {TERMS_UPDATED}</p>
 
           <h2>1. About these terms</h2>
           <p>
-            By using this website, you agree to these terms. The website is operated by {company.legalName}, registered
+            By using this website, you agree to these terms. The website is operated by {legalName}, registered
             in {company.country}.
           </p>
 
           <h2>2. Information on this website</h2>
           <p>
-            This website provides general information about {company.legalName}, Evercrop and earlier prototypes. Evercrop is in development and the descriptions of planned capabilities are for information only. We may change, update or remove content at any time.
+            This website provides general information about {legalName}, Evercrop and earlier prototypes. Evercrop is in development and the descriptions of planned capabilities are for information only. We may change, update or remove content at any time.
           </p>
 
           <h2>3. Intellectual property</h2>
           <p>
-            Unless stated otherwise, the content, design, text and graphics on this website belong to {company.legalName}.
+            Unless stated otherwise, the content, design, text and graphics on this website belong to {legalName}.
             You may view and share pages for personal or internal business purposes, but may not reproduce them for
             commercial use without our permission.
           </p>
@@ -125,7 +127,7 @@ export function Terms() {
 
           <h2>6. Limitation of liability</h2>
           <p>
-            This website is provided on an “as is” basis. To the extent permitted by law, {company.legalName} is not
+            This website is provided on an "as is" basis. To the extent permitted by law, {legalName} is not
             liable for any loss arising from your use of, or reliance on, this website.
           </p>
 

@@ -66,13 +66,13 @@ export interface SocialProfiles {
 const siteUrl = (import.meta.env.VITE_SITE_URL?.trim() || 'https://tyllage.com').replace(/\/+$/, '');
 
 const social: SocialProfiles = {
-  linkedin: 'https://www.linkedin.com/company/tyllage-llp',
+  linkedin: 'https://www.linkedin.com/company/soleaf',
   instagram: 'https://www.instagram.com/tyllage.llp/',
   github: null,
 };
 
 const contact: CompanyContact = {
-  email: 'tyllage.co@gmail.com',
+  email: 'soleaf.co@gmail.com',
   phone: null,
   address: null,
   uen: 'T26LL1129K',
@@ -108,15 +108,15 @@ const team: TeamMember[] = [
 ];
 
 export const company = {
-  legalName: 'Tyllage LLP',
-  brandName: 'Tyllage',
+  legalName: 'SoLeaf LLP',
+  brandName: 'SoLeaf',
   industry: 'AgriTech / Artificial Intelligence / Software Development',
   country: 'Singapore',
   countryCode: 'SG',
   entityType: 'Limited Liability Partnership',
   siteUrl,
   logo: '/logo/2.png',
-  description: 'Tyllage is a Singapore-registered AgriTech software company developing tools for agricultural businesses.',
+  description: 'SoLeaf is a Singapore-registered AgriTech software company developing tools for agricultural businesses.',
   social,
   contact,
   founders,
@@ -125,7 +125,7 @@ export const company = {
 
 export const evercrop = {
   name: 'Evercrop',
-  brandName: 'Evercrop by Tyllage',
+  brandName: 'Evercrop by SoLeaf',
   tagline: 'Beyond the first harvest.',
   description: 'AI-Powered Farm Sales Operations',
 } as const;

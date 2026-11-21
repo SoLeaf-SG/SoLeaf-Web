@@ -13,11 +13,11 @@ interface CtaBandProps {
 }
 
 export function CtaBand({
-  eyebrow = 'Partner with Tyllage',
+  eyebrow = 'Partner with SoLeaf',
   id = 'cta-title',
-  title = 'Talk to Tyllage',
+  title = 'Talk to SoLeaf',
   text = 'We welcome enquiries about Evercrop and farm sales workflows.',
-  buttonLabel = 'Contact Tyllage',
+  buttonLabel = 'Contact SoLeaf',
 }: CtaBandProps) {
   const { email } = company.contact;
   return (

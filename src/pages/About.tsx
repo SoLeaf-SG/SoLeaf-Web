@@ -13,7 +13,7 @@ import { usePageMeta } from '../hooks/usePageMeta';
  * Founders' story — an editable draft supplied by the founders.
  * Keep it free of invented experiences, schools, awards or qualifications.
  */
-const aboutDescription = 'Tyllage is a Singapore-based, female-founded AgriTech software startup developing practical AI solutions for agricultural businesses.';
+const aboutDescription = 'SoLeaf is a Singapore-based, female-founded AgriTech software startup developing practical AI solutions for agricultural businesses.';
 const aboutFocus = 'Our initial focus is on farm operations and sales intelligence, rather than IoT, robotics or physical agricultural equipment.';
 const aboutMission = 'Empower farms with accessible technology that improves sales efficiency, strengthens market connections, and supports sustainable agricultural operations.';
 const aboutVision = 'Build a smarter and more commercially resilient agricultural ecosystem through intelligent, connected software.';
@@ -22,11 +22,11 @@ const story = [
   'Our journey began with a shared interest in technology and the belief that meaningful innovation should solve real-world problems.',
   'Through our educational journeys from ITE to polytechnic, we developed our technical foundations, explored software development, and discovered opportunities to apply technology beyond the classroom.',
   'That curiosity eventually led us towards agriculture — an industry where practical digital solutions can help businesses improve operations, strengthen customer relationships and make more informed decisions.',
-  'As two aspiring female technology entrepreneurs, we founded Tyllage to explore how artificial intelligence and connected software can support agricultural businesses in Singapore.',
+  'As two aspiring female technology entrepreneurs, we founded SoLeaf to explore how artificial intelligence and connected software can support agricultural businesses in Singapore.',
   'We’re still learning, building and refining our solutions with a focus on real operational needs.',
 ];
 const storyClosing =
-  'For us, Tyllage represents more than a technology project. It represents our commitment to applying what we’ve learnt to challenges worth solving.';
+  'For us, SoLeaf represents more than a technology project. It represents our commitment to applying what we’ve learnt to challenges worth solving.';
 
 const values = [
   { icon: Sprout, title: 'Farm-first', text: 'We start from the realities of agricultural businesses — their time, budgets and ways of working.' },
@@ -46,7 +46,7 @@ const approach = [
 /** Milestones in order — no dates are shown until they are confirmed. */
 const journeySteps = [
   { label: 'Inspiration', title: 'Where it began', text: 'Our experience with SCCCI and Technopreneurship inspired us to explore turning technical ideas into real-world solutions.', state: 'done' },
-  { label: 'Established', title: 'Tyllage LLP registered', text: 'We established Tyllage in Singapore in October 2026 to develop our own technology-driven solutions.', state: 'done' },
+  { label: 'Established', title: 'SoLeaf’s venture begins', text: 'Our venture was registered in Singapore in October 2026 to develop our own technology-driven solutions.', state: 'done' },
   { label: 'Exploration', title: 'Our first prototypes', text: 'We explored AI-assisted farm interactions through early proof-of-concept and prototype work.', state: 'done' },
   { label: 'Current focus', title: 'Introducing Evercrop', text: 'Our flagship product aims to connect customer enquiries, stock availability and farm orders.', state: 'current' },
   { label: 'Next', title: 'From MVP to farm pilots', text: 'Refine Evercrop, gather farm feedback and work towards a measurable pilot.', state: 'next' },
@@ -71,7 +71,7 @@ export default function About() {
   return (
     <>
       <Hero
-        eyebrow="About Tyllage"
+        eyebrow="About SoLeaf"
         title={
           <>
             From Classrooms to <em className="serif-accent">Cultivating Change.</em>
@@ -90,7 +90,7 @@ export default function About() {
               Founded by two female technology entrepreneurs.
             </h2>
             <p className="muted">
-              {company.legalName} was founded by {company.founders.map((f) => f.name).join(' and ')}.
+              SoLeaf was founded by {company.founders.map((f) => f.name).join(' and ')}.
             </p>
           </div>
           <div className="story__body">
@@ -99,7 +99,7 @@ export default function About() {
             ))}
             <blockquote className="story__quote">
               <p>{storyClosing}</p>
-              <footer>— The founders of {company.brandName}</footer>
+              <footer>- The founders of SoLeaf</footer>
             </blockquote>
           </div>
         </div>
@@ -110,12 +110,12 @@ export default function About() {
         <div className="reveal">
           <TeamGallery
             people={people}
-            label="Tyllage team members"
+            label="SoLeaf team members"
             heading={
               <SectionHeading
                 id="team-title"
                 eyebrow="Our team"
-                title="The people behind Tyllage."
+                title="The people behind SoLeaf."
                 intro={`Founded by ${company.founders.map((f) => f.name).join(' and ')}, and growing with a team who share our focus.`}
               />
             }
@@ -252,10 +252,10 @@ export default function About() {
 
       <CtaBand
         id="about-cta-title"
-        eyebrow="Partner with Tyllage"
+        eyebrow="Partner with SoLeaf"
         title="Let’s Grow Something Meaningful Together."
         text="We would like to hear from farm owners, agricultural businesses, technology partners, schools, industry collaborators, mentors and investors."
-        buttonLabel="Partner With Tyllage"
+        buttonLabel="Partner With SoLeaf"
       />
     </>
   );

@@ -65,7 +65,7 @@ export function SocialLinks({ variant = 'icons', tone = 'light', include, classN
                 <span className="social-card__title">{label}</span>
                 <span className="social-card__text">{description}</span>
                 <span className="social-card__cta">
-                  Follow {company.brandName} on {label}
+                  Follow SoLeaf on {label}
                   <ArrowUpRight size={16} aria-hidden />
                 </span>
               </span>
@@ -85,8 +85,8 @@ export function SocialLinks({ variant = 'icons', tone = 'light', include, classN
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={variant === 'icons' ? `${company.brandName} on ${label} (opens in a new tab)` : undefined}
-            title={variant === 'icons' ? `${company.brandName} on ${label}` : undefined}
+            aria-label={variant === 'icons' ? `SoLeaf on ${label} (opens in a new tab)` : undefined}
+            title={variant === 'icons' ? `SoLeaf on ${label}` : undefined}
           >
             <Icon size={18} />
             {variant === 'list' && (

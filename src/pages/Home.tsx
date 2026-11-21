@@ -7,7 +7,7 @@ import { FollowJourney } from '../components/FollowJourney';
 import { Media } from '../components/Media';
 import { Section, SectionHeading } from '../components/Section';
 import { StageBadge } from '../components/StageBadge';
-import { company, evercrop } from '../data/company';
+import { evercrop } from '../data/company';
 import { media } from '../data/media';
 import { pages } from '../data/seo';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -19,17 +19,17 @@ export default function Home() {
     <>
       <Hero
         variant="home"
-        eyebrow={company.brandName}
+        eyebrow="SoLeaf"
         title={<>Software for the <em className="hero__title-accent">business of farming.</em></>}
         lead="We are a Singapore-registered AgriTech software company. Our mission is to make the commercial side of farming easier to manage with software that fits how farm teams work."
         media={media.hero}
         actions={
           <>
             <Link to="/contact" className="btn btn--sage">
-              Contact Tyllage
+              Contact SoLeaf
             </Link>
             <Link to="/about" className="btn btn--ghost-light">
-              About Tyllage <ArrowRight size={18} aria-hidden />
+              About SoLeaf <ArrowRight size={18} aria-hidden />
             </Link>
           </>
         }
@@ -52,7 +52,7 @@ export default function Home() {
             <SectionHeading
               id="evercrop-intro"
               eyebrow={<><span>Our flagship product</span><StageBadge stage="mvp" /></>}
-              title={<>{evercrop.name} <span>by Tyllage</span></>}
+              title={<>{evercrop.name} <span>by SoLeaf</span></>}
               intro={evercrop.tagline}
             />
             <p>Evercrop is an AI-powered farm sales platform designed to connect customer enquiries, inventory availability and order management.</p>
@@ -68,9 +68,9 @@ export default function Home() {
         <div className="feature-split">
           <Media slot={media.founders} className="feature-split__image" />
           <div className="feature-split__copy">
-            <p className="eyebrow">About Tyllage</p>
+            <p className="eyebrow">About SoLeaf</p>
             <h2 id="home-story-title" className="h2">From classrooms to <em className="serif-accent">cultivating change.</em></h2>
-            <p>Felicia Tan and Shernell Ho founded Tyllage in Singapore to apply their software skills to agricultural businesses.</p>
+            <p>Felicia Tan and Shernell Ho founded SoLeaf in Singapore to apply their software skills to agricultural businesses.</p>
             <Link to="/about" className="btn btn--outline">Meet the team <ArrowRight size={18} aria-hidden /></Link>
           </div>
         </div>

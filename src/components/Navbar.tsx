@@ -65,7 +65,7 @@ export function Navbar() {
             </li>
             <li className="site-nav__mobile-only">
               <Link to="/contact" className="btn btn--primary btn--block">
-                Contact Tyllage <ArrowRight size={18} aria-hidden />
+                Contact SoLeaf <ArrowRight size={18} aria-hidden />
               </Link>
             </li>
           </ul>
@@ -78,7 +78,7 @@ export function Navbar() {
             include={['linkedin', 'instagram']}
           />
           <Link to="/contact" className={`btn btn--sm site-header__cta ${overHero ? 'btn--sage' : 'btn--primary'}`}>
-            Contact Tyllage
+            Contact SoLeaf
           </Link>
           <button
             ref={toggleRef}

@@ -8,54 +8,54 @@ export interface PageMeta {
   noindex?: boolean;
 }
 
-const suffix = ' | Tyllage LLP';
+const suffix = ' | SoLeaf';
 
 export const pages = {
   home: {
     path: '/',
-    title: 'Tyllage | Singapore AgriTech Software Company',
+    title: 'SoLeaf | Singapore AgriTech Company',
     description:
-      'Tyllage is a Singapore-registered AgriTech software company developing tools for agricultural businesses, including its flagship farm sales product Evercrop.',
+      'SoLeaf is a Singapore-registered AgriTech software company developing tools for agricultural businesses, including its flagship farm sales product Evercrop.',
   },
   about: {
     path: '/about',
-    title: 'Company & Team' + suffix,
+    title: 'About Us' + suffix,
     description:
-      'Meet the team behind Tyllage, a Singapore AgriTech startup founded by Felicia Tan and Shernell Ho. Explore our story, mission, vision and values.',
+      'Meet the team behind SoLeaf, a Singapore AgriTech startup founded by Felicia Tan and Shernell Ho. Explore our story, mission, vision and values.',
   },
   platform: {
     path: '/platform',
-    title: 'Evercrop by Tyllage | AI-Powered Farm Sales Operations',
+    title: 'Evercrop' + suffix,
     description:
       'Explore the proposed Evercrop workflow for WhatsApp enquiries, stock and price checks, structured orders, staff escalation and fulfilment.',
   },
   projects: {
     path: '/projects',
-    title: 'Product Development & Prototypes' + suffix,
+    title: 'Projects' + suffix,
     description:
       'Follow Evercrop development and explore the earlier proof of concept for harvest pre-orders and learning-journey enquiries.',
   },
   technology: {
     path: '/technology',
-    title: 'Software Engineering & AI' + suffix,
+    title: 'Technology' + suffix,
     description:
-      'Explore Tyllage’s approach to software engineering and AI integration through Evercrop’s proposed architecture.',
+      'Explore SoLeaf’s approach to software engineering and AI integration through Evercrop’s proposed architecture.',
   },
   contact: {
     path: '/contact',
     title: 'Contact' + suffix,
     description:
-      'Contact Tyllage LLP to discuss farm sales workflows, Evercrop development or potential collaboration.',
+      'Contact SoLeaf LLP to discuss farm sales workflows, Evercrop development or potential collaboration.',
   },
   privacy: {
     path: '/privacy',
     title: 'Privacy Policy' + suffix,
-    description: 'How Tyllage LLP handles personal data submitted through this website.',
+    description: 'How SoLeaf LLP handles personal data submitted through this website.',
   },
   terms: {
     path: '/terms',
     title: 'Terms of Use' + suffix,
-    description: 'Terms governing the use of the Tyllage LLP website.',
+    description: 'Terms governing the use of the SoLeaf LLP website.',
   },
   notFound: {
     path: '/404',
@@ -66,7 +66,7 @@ export const pages = {
 } satisfies Record<string, PageMeta>;
 
 export const OG_IMAGE = '/images/og-image.png';
-export const OG_IMAGE_ALT = 'Tyllage LLP — Singapore AgriTech software company';
+export const OG_IMAGE_ALT = 'SoLeaf LLP — Singapore AgriTech software company';
 
 export function canonicalUrl(path: string): string {
   return path === '/' ? `${company.siteUrl}/` : `${company.siteUrl}${path}`;

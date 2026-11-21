@@ -1,16 +1,16 @@
-# Tyllage — Corporate Website
+# SoLeaf — Corporate Website
 
-The official corporate website of **Tyllage LLP** (UEN T26LL1129K) is [tyllage.com](https://tyllage.com).
-Tyllage is a Singapore-registered AgriTech software company established in October 2026.
+The official corporate website of **SoLeaf LLP** (UEN T26LL1129K) is [tyllage.com](https://tyllage.com).
+SoLeaf is a Singapore-registered AgriTech software company established in October 2026.
 Its mission is to make the commercial side of farming easier to manage with practical software.
 
-> **Proprietary software. © 2026 Tyllage LLP. All rights reserved.**
+> **Proprietary software. © 2026 SoLeaf LLP. All rights reserved.**
 > This repository is not open source. Being able to see it on GitHub does not give you permission to
 > copy, use, run, modify, deploy or redistribute any part of it, including its code, content, design
 > and brand assets. Outside contributions are not accepted. See [LICENSE](LICENSE).
 
-The site introduces Tyllage, its team, its technology approach and its flagship product,
-**Evercrop by Tyllage**. Evercrop’s product tagline is “Beyond the first harvest.”
+The site introduces SoLeaf, its team, its technology approach and its flagship product,
+**Evercrop by SoLeaf**. Evercrop’s product tagline is “Beyond the first harvest.”
 
 - **Stack:** React 18, TypeScript, Vite, React Router, Lucide React and custom CSS.
 - **Rendering:** Page HTML and metadata are prerendered at build time and hydrated in the browser.
@@ -36,7 +36,7 @@ The site introduces Tyllage, its team, its technology approach and its flagship 
 
 ## Project status
 
-**Evercrop** is Tyllage's proprietary farm sales software in development. Its proposed MVP
+**Evercrop** is SoLeaf's proprietary farm sales software in development. Its proposed MVP
 would receive WhatsApp enquiries through a planned WhatsApp Business API integration, use AI to
 interpret requests, verify stock and buyer-specific prices, capture structured orders and route
 exceptions to farm staff. A dashboard would surface orders for fulfilment. Customer records and
@@ -81,7 +81,7 @@ and every push to `main`.
 | `/about` | Company story, founders, leadership and mission |
 | `/platform` | Evercrop product page, proposed order workflow and development status |
 | `/projects` | Evercrop development and the earlier MEOD-context prototype |
-| `/technology` | Tyllage’s engineering and AI approach, illustrated through Evercrop’s proposed architecture |
+| `/technology` | SoLeaf’s engineering and AI approach, illustrated through Evercrop’s proposed architecture |
 | `/contact` | Enquiries, email, social profiles and registered business details |
 | `/privacy`, `/terms` | Privacy Policy and Terms of Use |
 | Any other URL | 404 page (`noindex`) |
@@ -102,7 +102,7 @@ All company facts live in data files, so most updates don't need component chang
 | `src/data/platform.ts` | Evercrop workflow and development-stage labels. |
 | `src/data/projects.ts` | Historical projects and whether each appears publicly. |
 | `src/data/media.ts` | Image slots: which illustrated scene or approved photo each section shows. |
-| `src/data/seo.ts` | Page metadata and structured data linking Tyllage LLP to Evercrop. |
+| `src/data/seo.ts` | Page metadata and structured data linking SoLeaf LLP to Evercrop. |
 | `src/data/navigation.ts` | Main navigation items. |
 
 ### Before publishing
@@ -145,8 +145,8 @@ credibility with farms, partners and innovation audiences depends on it.
 
 ### Logo
 
-The official logo is `public/logo/2.png`. It is a symbol without a wordmark, so "Tyllage" is set beside
-it. The site uses small derivatives for speed (`tyllage-logo-96.webp`, favicons, `apple-touch-icon.png`)
+The current logo asset is `public/logo/2.png` and still carries the previous wordmark. The site uses
+small derivatives for speed (`tyllage-logo-96.webp`, favicons, `apple-touch-icon.png`)
 and keeps `/logo/2.png` as the fallback. It is shown at 44 px directly on the background, on light and
 dark sections alike. After replacing the logo, run `npm run brand-assets` and `npm run og-image`.
 
@@ -169,7 +169,7 @@ hero: {
 ```
 
 Slots without a photo keep their illustration, so photos can be added one at a time. Use only photos
-Tyllage owns or has licensed, and record the credit. Never present generic stock photos as MEOD Farm or
+SoLeaf owns or has licensed, and record the credit. Never present generic stock photos as MEOD Farm or
 another real facility. Use MEOD photographs and branding only with permission.
 
 ---
@@ -191,7 +191,7 @@ length limits, consent) and shows an accessible error summary.
 
 - **No valid endpoint configured (default):** the form works as an **email-draft flow**. It is labelled
   "This form prepares an email". A valid submission opens the visitor's email app with the enquiry
-  pre-filled and addressed to tyllage.co@gmail.com, and the page says plainly that **nothing has been
+  pre-filled and addressed to soleaf.co@gmail.com, and the page says plainly that **nothing has been
   sent** until they press Send. It never shows a fake success message.
 - **Valid endpoint configured:** the form discloses direct submission and sends JSON to `VITE_CONTACT_ENDPOINT`.
   The payload includes the enquiry, consent, timestamp and source page. The form reports success
@@ -264,7 +264,7 @@ All custom CSS lives in `src/index.css`. No CSS framework is used.
 - Each page has its own `<title>`, meta description, canonical URL, Open Graph and Twitter tags. These
   are **written into the static HTML** at build time, so crawlers and link previews see them without
   running JavaScript. `usePageMeta` keeps them in sync during client-side navigation.
-- An `Organization` JSON-LD block is included on every page and identifies Evercrop as a Tyllage LLP product. `sameAs` lists only the social profiles
+- An `Organization` JSON-LD block is included on every page and identifies Evercrop as a SoLeaf LLP product. `sameAs` lists only the social profiles
   that are configured (LinkedIn and Instagram), and the UEN is included as an identifier.
 - `robots.txt` and `sitemap.xml` are generated at build time for the configured domain. The 404 page is
   marked `noindex`.
@@ -317,8 +317,8 @@ Verify the live distribution, certificate, DNS and alias before changing a deplo
 
 ### GitHub Actions (OIDC, no stored AWS keys)
 
-> **Organisation policy:** the Tyllage GitHub organisation allows only actions created by GitHub or
-> owned by Tyllage, and every action must be pinned to a full-length commit SHA. A workflow that
+> **Organisation policy:** the GitHub organisation hosting this repository allows only actions created
+> by GitHub or owned by that organisation, and every action must be pinned to a full-length commit SHA. A workflow that
 > breaks either rule ends in **Startup failure** before any job runs. When updating
 > `.github/workflows/deploy.yml`, keep each `uses:` pinned (for example
 > `actions/checkout@<40-character SHA> # v4.4.0`) and don't add third-party actions. AWS sign-in
@@ -367,12 +367,12 @@ PostgreSQL and AI APIs, with AWS under evaluation and WhatsApp Business API inte
 
 ## License and ownership
 
-© 2026 Tyllage LLP. All rights reserved.
+© 2026 SoLeaf LLP. All rights reserved.
 
-The Tyllage website, including its code, content, designs, illustrations and brand assets, is
-proprietary to Tyllage LLP and is shared under the [Tyllage Proprietary License](LICENSE). No licence
-is granted to use, copy, modify, deploy or redistribute it without Tyllage's prior written permission.
-The Tyllage name, logo, founders' story and other brand assets may not be reused. GitHub's Terms of
+The SoLeaf website, including its code, content, designs, illustrations and brand assets, is
+proprietary to SoLeaf LLP and is shared under the [existing proprietary license](LICENSE). No licence
+is granted to use, copy, modify, deploy or redistribute it without SoLeaf's prior written permission.
+The SoLeaf name, logo, founders' story and other brand assets may not be reused. GitHub's Terms of
 Service let you view and fork public repositories on GitHub; that does not give any further right to
 use this code.
 
@@ -380,10 +380,10 @@ Third-party open-source packages and web fonts used by the site remain under the
 
 | Document | Purpose |
 | --- | --- |
-| [LICENSE](LICENSE) | Tyllage Proprietary License (all rights reserved) |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Outside contributions are not accepted; workflow for Tyllage team members |
+| [LICENSE](LICENSE) | Existing proprietary license (all rights reserved) |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Outside contributions are not accepted; workflow for SoLeaf team members |
 | [SECURITY.md](SECURITY.md) | How to report a vulnerability privately |
 
 For licensing, partnership or permission enquiries, email
-[tyllage.co@gmail.com](mailto:tyllage.co@gmail.com) or contact the team through the
-[Tyllage GitHub organisation](https://github.com/Tyllage).
+[soleaf.co@gmail.com](mailto:soleaf.co@gmail.com) or contact the team through the
+[GitHub organisation hosting this repository](https://github.com/Tyllage).

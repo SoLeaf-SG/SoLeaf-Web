@@ -67,7 +67,7 @@ const siteUrl = (import.meta.env.VITE_SITE_URL?.trim() || 'https://tyllage.com')
 
 const social: SocialProfiles = {
   linkedin: 'https://www.linkedin.com/company/soleaf',
-  instagram: 'https://www.instagram.com/tyllage.llp/',
+  instagram: 'https://www.instagram.com/soleaf.llp',
   github: null,
 };
 

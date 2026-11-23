@@ -19,9 +19,9 @@ export default function Home() {
     <>
       <Hero
         variant="home"
-        eyebrow="SoLeaf"
-        title={<>Software for the <em className="hero__title-accent">business of farming.</em></>}
-        lead="We are a Singapore-registered AgriTech software company. Our mission is to make the commercial side of farming easier to manage with software that fits how farm teams work."
+        eyebrow="SoLeaf · Singapore Agritech"
+        title={<>Connecting farms with <em className="hero__title-accent">the people they feed.</em></>}
+        lead="We build practical technology that helps farms simplify operations, connect with buyers and make fresh local produce more accessible."
         media={media.hero}
         actions={
           <>
